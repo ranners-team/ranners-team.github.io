@@ -6,14 +6,15 @@
             </a>
             <div class="flex flex-col">
                 <NavbarLink href="/contact">
-                    cntact
+                    contact
                 </NavbarLink>
                 <NavbarLink href="/aboutus">
                     about us
                 </NavbarLink>
                 <NavbarLink href="/team">
-                    team
+                    <Icon name="uil:github" style="color: black" />
                 </NavbarLink>
+                
             </div>
         </nav>  
         <NuxtPage />
@@ -23,7 +24,7 @@
             </a>
             <div>
                 <FooterLink href="/contact">
-                    cntact
+                    contact
                 </FooterLink>
                 <FooterLink href="/aboutus">
                     about us

@@ -5,5 +5,5 @@ export default defineNuxtConfig({
   gtag: {
     id: 'G-YL6HE1XPXP'
   },
-  modules: ["@nuxtjs/tailwindcss", "nuxt-gtag"]
+  modules: ["@nuxtjs/tailwindcss", "nuxt-gtag", "@nuxt/icon"]
 })
