@@ -13,6 +13,7 @@
     "@nuxtjs/tailwindcss": "^6.12.1",
     "autoprefixer": "^10.4.20",
     "nuxt": "^3.13.0",
+    "nuxt-gtag": "^3.0.1",
     "postcss": "^8.4.45",
     "vue": "latest",
     "vue-router": "latest"
