@@ -45,11 +45,21 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         
-      - name: deploy file SFTP server
-        uses: milanmk/actions-file-deployer@master
+      - name: Download artifact
+        uses: actions/download-artifact@v3
         with:
-          remote-protocol: "sftp"
-          remote-host: "${{ secrets.SERVER_SFTP }}"
-          remote-user: "${{ secrets.FTP_USERNAME }}"
-          remote-password: "${{ secrets.FTP_PASSWORD }}"
-          remote-path: "/srv/www/fs2024_ranner/www/"
+          name: site-artifact
+
+      - name: Prepare deployment directory
+        run: |
+          mkdir -p deployment
+          unzip site-artifact.zip -d deployment
+
+      - name: Sync files to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: "${{ secrets.SERVER_SFTP }}"
+          username: "${{ secrets.FTP_USERNAME }}"
+          password: "${{ secrets.FTP_PASSWORD }}"
+          local-dir: "./deployment/public"
+          server-dir: "/srv/www/fs2024_ranner/www/"
