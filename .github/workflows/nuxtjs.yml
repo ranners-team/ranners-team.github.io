@@ -62,10 +62,10 @@ jobs:
         uses: actions/deploy-pages@v4
 
       - name: Sync files to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: "${{ secrets.SERVER_SFTP }}"
           username: "${{ secrets.FTP_USERNAME }}"
           password: "${{ secrets.FTP_PASSWORD }}"
-          local-dir: "./artifact/"
-          server-dir: "/srv/www/fs2024_ranner/www/"
+          local_path: "./artifact/*"
+          remote_path: "/srv/www/fs2024_ranner/www/"
