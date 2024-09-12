@@ -52,6 +52,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: page-artifact
+          path: .
 
       - name: List files in directory
         run: ls -al
