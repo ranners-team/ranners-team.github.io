@@ -62,14 +62,14 @@ jobs:
         run: ls ./artifact
           
 
-      #- name: Deploy to GitHub Pages
-      #  uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
 
-      #- name: Sync files to FTP
-      #  uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      #  with:
-      #    server: "${{ secrets.SERVER_SFTP }}"
-      #    username: "${{ secrets.FTP_USERNAME }}"
-      #    password: "${{ secrets.FTP_PASSWORD }}"
-      #    local-dir: "./public"
-      #    server-dir: "/srv/www/fs2024_ranner/www/"
+      - name: Sync files to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: "${{ secrets.SERVER_SFTP }}"
+          username: "${{ secrets.FTP_USERNAME }}"
+          password: "${{ secrets.FTP_PASSWORD }}"
+          local-dir: "./artifact"
+          server-dir: "/srv/www/fs2024_ranner/www/"
