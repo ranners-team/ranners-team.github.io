@@ -18,9 +18,8 @@ jobs:
       - run: npm install
       - run: npx nuxt build --preset github_pages
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
-          name: github-pages
           path: ./.output/public
   # Deployment job
   deploy:
@@ -45,8 +44,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          path: ./.output/public
         
       - name: Download artifact
         uses: actions/download-artifact@v3
@@ -56,7 +53,8 @@ jobs:
       - name: Prepare deployment directory
         run: |
           mkdir -p deployment
-          unzip github-pages.zip -d deployment
+          unzip github-pages.zip -d .
+          tar -xvzf artifact.tar -C deployment
 
       - name: Sync files to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
