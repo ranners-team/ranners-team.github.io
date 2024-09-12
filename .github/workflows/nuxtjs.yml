@@ -47,20 +47,20 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Extract artifact
+        run: |
+          mkdir -p ./artifact
         
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: page-artifact
-          path: .
+          path: ./artifact
 
       - name: List files in directory
-        run: ls -al
+        run: ls ./artifact
           
-      #- name: Extract artifact
-      #  run: |
-      #    mkdir -p ./public
-      #    unzip page-artifact.zip -d ./public
 
       #- name: Deploy to GitHub Pages
       #  uses: actions/deploy-pages@v4
