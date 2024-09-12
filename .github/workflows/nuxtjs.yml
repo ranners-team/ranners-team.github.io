@@ -39,3 +39,12 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        
+      - name: deploy file SFTP server
+        uses: milanmk/actions-file-deployer@master
+        with:
+            remote-protocol: "sftp"
+            remote-host: "${{ secrets.SERVER_SFTP }}"
+            remote-user: "${{ secrets.FTP_USERNAME }}"
+            remote-password: "${{ secrets.FTP_PASSWORD }}"
+            remote-path: "/srv/www/fs2024_ranner/www/"
