@@ -52,20 +52,23 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: page-artifact
+
+      - name: List files in directory
+        run: ls -al
           
-      - name: Extract artifact
-        run: |
-          mkdir -p ./public
-          unzip page-artifact.zip -d ./public
+      #- name: Extract artifact
+      #  run: |
+      #    mkdir -p ./public
+      #    unzip page-artifact.zip -d ./public
 
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      #- name: Deploy to GitHub Pages
+      #  uses: actions/deploy-pages@v4
 
-      - name: Sync files to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: "${{ secrets.SERVER_SFTP }}"
-          username: "${{ secrets.FTP_USERNAME }}"
-          password: "${{ secrets.FTP_PASSWORD }}"
-          local-dir: "./public"
-          server-dir: "/srv/www/fs2024_ranner/www/"
+      #- name: Sync files to FTP
+      #  uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      #  with:
+      #    server: "${{ secrets.SERVER_SFTP }}"
+      #    username: "${{ secrets.FTP_USERNAME }}"
+      #    password: "${{ secrets.FTP_PASSWORD }}"
+      #    local-dir: "./public"
+      #    server-dir: "/srv/www/fs2024_ranner/www/"
