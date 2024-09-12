@@ -57,11 +57,7 @@ jobs:
         with:
           name: page-artifact
           path: ./artifact
-
-      - name: List files in directory
-        run: ls ./artifact
           
-
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
 
@@ -71,5 +67,5 @@ jobs:
           server: "${{ secrets.SERVER_SFTP }}"
           username: "${{ secrets.FTP_USERNAME }}"
           password: "${{ secrets.FTP_PASSWORD }}"
-          local-dir: "./artifact"
+          local-dir: "./artifact/"
           server-dir: "/srv/www/fs2024_ranner/www/"
