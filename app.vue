@@ -1,27 +1,51 @@
 <template>
     <div class="flex flex-col">
-        <nav class="flex gap-3 flex-col">
-            <a href="/">
-                ranner
+
+        <!-- Navbar -->
+        <nav class="flex flex-row px-8 gap-3 items-center justify-between ">
+            <a href="/" class="flex flex-row align-self-center">
+                <img src="/assets/ranner_logo.svg"  height="50" width="50"></img>
+                <p>Ranner</p>
             </a>
-            <div class="flex flex-col">
+            <div class="flex justify-between gap-8">
+                <NavbarLink href="/">
+                    Inicio
+                </NavbarLink>
                 <NavbarLink href="/contact">
-                    contact
+                    Contact
                 </NavbarLink>
                 <NavbarLink href="/aboutus">
-                    about us
+                    About us
                 </NavbarLink>
                 <NavbarLink href="/team">
-                    <Icon name="uil:github" style="color: black" />
+                    Team
                 </NavbarLink>
-                
             </div>
         </nav>  
+
+        <!-- Contenido Página-->
         <NuxtPage />
-        <footer class="bg-black text-white flex flex-col">
+
+        <!-- Footer -->
+        <footer class="bg-black text-white flex flex-row justify-between">
             <a href="/">
-                ranner
+                <p>Ranner</p>
+                <p>
+                    Tu espacio de aprendizaje interactivo
+                </p>
             </a>
+            <div class="flex flex-col">
+                <p>Nuestras redes</p>
+                <hr>
+                <FooterLink href="/">
+                    <Icon name="mdi:instagram" style="color: white" />
+                    Instagram
+                </FooterLink>
+                <FooterLink href="/">
+                    <Icon name="mdi:linkedin" style="color: white" />
+                    LinkedIn
+                </FooterLink>
+            </div>
             <div>
                 <FooterLink href="/contact">
                     contact
