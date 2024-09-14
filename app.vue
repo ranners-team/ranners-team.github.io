@@ -167,19 +167,9 @@
                   class="mr-2 text-xl"
                 />
                 <a
-                  href="/about"
+                  href="/aboutus"
                   class="transition-colors duration-200 hover:text-gray-300"
                 >Sobre nosotros</a>
-              </li>
-              <li class="flex items-center">
-                <Icon
-                  icon="mdi:tools"
-                  class="mr-2 text-xl"
-                />
-                <a
-                  href="/services"
-                  class="transition-colors duration-200 hover:text-gray-300"
-                >Servicios</a>
               </li>
               
               <li class="flex items-center">
@@ -191,16 +181,6 @@
                   href="/contact"
                   class="transition-colors duration-200 hover:text-gray-300"
                 >Contacto</a>
-              </li>
-              <li class="flex items-center">
-                <Icon
-                  icon="mdi:shield-check"
-                  class="mr-2 text-xl"
-                />
-                <a
-                  href="/privacy-policy"
-                  class="transition-colors duration-200 hover:text-gray-300"
-                >Política de privacidad</a>
               </li>
             </ul>
           </div>
