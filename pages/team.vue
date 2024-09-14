@@ -218,7 +218,7 @@ const teamMembers = ref([
   { 
     name: 'Juan Francisco Baquedano', 
     job: 'Front-End', 
-    src: '/_nuxt/public/juanfra.jpg', 
+    src: '/_nuxt/public/juan.jfif', 
     email: 'juan.baquedano@usm.cl', 
     linkedin: 'https://www.linkedin.com/in/juanfra-baquedano/', 
   },
