@@ -63,7 +63,6 @@
 </template>
   
   <script setup>
-import { Icon } from '@iconify/vue';
   
 const navLinks = [
   { text: 'Inicio', href: '/' },
@@ -71,13 +70,11 @@ const navLinks = [
   { text: 'About Us', href: '/aboutus' },
   { text: 'Team', href: '/team' },
 ];
-  
-const currentYear = computed(() => new Date().getFullYear());
   </script>
-  
+  <!--
   <script>
 export default {
   name: 'Footer',
 };
   </script>
-  
+  -->

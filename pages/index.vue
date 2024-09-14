@@ -125,7 +125,7 @@ const stopButtonPulse = () => {
     margin: 0 auto;
     letter-spacing: .15em;
     animation: 
-      typing 3.5s steps(40, end),
+      typing 1.5s steps(40, end),
       blink-caret .75s step-end infinite;
   }
   
