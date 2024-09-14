@@ -1,5 +1,5 @@
 <template>
-  <div class="flex min-h-screen items-center justify-center bg-[#5747a6] px-4 py-12 sm:px-6 lg:px-8">
+  <div class="flex min-h-screen flex-col items-center justify-center bg-[#5747a6] px-4 py-12 sm:px-6 lg:px-8">
     <div class="w-full max-w-4xl space-y-8">
       <transition
         appear
@@ -14,42 +14,55 @@
           </p>
         </div>
       </transition>
-      
-      <transition-group 
+      <transition
         appear
-        name="fade-in-list" 
-        tag="div" 
-        class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        name="fade-in"
       >
-        <div
-          v-for="(feature, index) in features"
-          :key="index"
-          class="rounded-lg bg-white bg-opacity-10 p-6 backdrop-blur-lg transition duration-500 hover:scale-105"
-          :style="{ animationDelay: `${index * 200}ms` }"
-        >
-          <div class="mb-4 animate-bounce text-3xl text-white">
-            <Icon
-              :icon="feature.icon"
-              width="48"
-              height="48"
-            />
+        <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
+          <div class="rounded-lg bg-white bg-opacity-10 p-6 backdrop-blur-lg transition duration-500">
+            <div class="mb-4 flex items-center">
+              <div class="mr-4 animate-pulse text-white">
+                <Icon
+                  icon="mdi:target"
+                  width="48"
+                  height="48"
+                />
+              </div>
+              <h2 class="text-3xl font-bold text-white">
+                Nuestra Misión
+              </h2>
+            </div>
+            <p class="text-gray-300">
+              Nuestra misión es transformar el proceso educativo mediante la integración de inteligencia artificial, proporcionando soluciones personalizadas que se adapten a las necesidades individuales de cada estudiante. Buscamos aliviar la carga de trabajo de los docentes y mejorar el rendimiento académico al ofrecer una experiencia de aprendizaje más efectiva, ajustada a cada necesidad y con disponibilidad 24 horas.
+            </p>
           </div>
-          <h3 class="mb-2 text-xl font-semibold text-white">
-            {{ feature.title }}
-          </h3>
-          <p class="text-gray-300">
-            {{ feature.description }}
-          </p>
+          <div class="rounded-lg bg-white bg-opacity-10 p-6 backdrop-blur-lg transition duration-500">
+            <div class="mb-4 flex items-center">
+              <div class="animate-spin-slow mr-4 text-white">
+                <Icon
+                  icon="mdi:eye"
+                  width="48"
+                  height="48"
+                />
+              </div>
+              <h2 class="text-3xl font-bold text-white">
+                Nuestra Visión
+              </h2>
+            </div>
+            <p class="text-gray-300">
+              Aspiramos a ser una referencia en el ámbito educativo, facilitando el aprendizaje adaptado y el apoyo docente mediante tecnología innovadora. Queremos crear un entorno educativo donde cada estudiante pueda alcanzar su máximo potencial y cada docente cuente con herramientas eficientes para enriquecer su labor educativa.
+            </p>
+          </div>
         </div>
-      </transition-group>
+      </transition>
     </div>
   </div>
+  <FooterFooter />
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
-
 
 const features = ref([
   {
@@ -60,7 +73,7 @@ const features = ref([
   {
     icon: 'mdi:account-group',
     title: 'Colaboración',
-    description: 'Trabajamos en estrecha colaboración con nuestros clientes para garantizar resultados excepcionales.',
+    description: 'Trabajamos en estrecha colaboración como equipo, para garantizar resultados excepcionales.',
   },
   {
     icon: 'mdi:rocket-launch',
@@ -101,6 +114,24 @@ const features = ref([
 @keyframes bounce {
   0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
   50% { transform: translateY(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .fade-in-enter-active,

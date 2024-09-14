@@ -9,7 +9,7 @@
             class="group flex items-center space-x-3"
           >
             <img
-              src="/assets/ranner_logo.svg"
+              src="/public/ranner_logo.svg"
               alt="Ranner Logo"
               class="size-10 transition-transform duration-300 group-hover:rotate-12"
             >
@@ -56,7 +56,6 @@
         </div>
       </transition>
     </nav>
-    
     <main class="grow overflow-x-hidden">
       <NuxtPage />
     </main>

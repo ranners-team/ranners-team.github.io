@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex h-[70vh] flex-col items-center justify-between overflow-hidden bg-[#5747a6] p-8 text-white md:flex-row">
+  <div class="relative flex min-h-screen flex-col items-center justify-between overflow-hidden bg-[#5747a6] p-8 text-white md:flex-row">
     <div class="z-10 mb-10 ml-10 max-w-xl md:mb-0">
       <h1 class="mb-4 text-4xl font-bold md:text-5xl">
         <span class="typing-effect">Comienza con la innovación.</span>
@@ -11,8 +11,7 @@
         Conéctate con nosotros y juntos exploraremos nuevas formas de aprendizaje que marcan la diferencia en el futuro de la educación.
       </p>
       <a
-        href="https://staging.ranner.cl/"
-        target="_blank"
+        href="/whatis"
       >
         <button 
           class="pulse-effect rounded-full bg-green-600 px-8 py-3 font-bold text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-green-500 hover:shadow-lg"
@@ -40,67 +39,10 @@
       </div>
     </div>
   </div>
-        
-  <div class="flex flex-col gap-10 bg-[#5747a6] px-24 py-10">
-    <div class="rounded-xl bg-white p-10 text-gray-800">
-      <div class="mx-auto flex flex-col items-center justify-evenly md:flex-row">
-        <div class="md:w-1/2">
-          <h2 class="mb-6 text-3xl font-bold">
-            ¿Qué es Ranner?
-          </h2>
-          <p class="text-lg leading-relaxed">
-            Es la solución educativa personalizada impulsada por inteligencia artificial, transformando la forma en que aprendemos.
-            <br><br>
-            Con la IA, adaptamos el contenido de aprendizaje a las necesidades únicas de cada estudiante, reduciendo la carga de trabajo de los docentes y mejorando significativamente el rendimiento académico.
-          </p>
-        </div>
-        <div class="flex justify-center">
-          <img
-            :src="rannerlogo"
-            alt="Robot"
-            class="h-auto w-full max-w-xs transition-transform duration-300 ease-in-out md:max-w-sm"
-          >
-        </div>
-      </div>
-    </div>
-    <div class="rounded-xl p-10 text-gray-800">
-      <div class="mx-auto flex flex-col items-center justify-between gap-8 md:flex-row">
-        <div class="youtube-embed-container md:w-1/2">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/dg91_yr44jU"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          />
-        </div>
-        <div class="instagram-embed-container md:w-1/2">
-          <blockquote 
-            class="instagram-media" 
-            data-instgrm-captioned 
-            data-instgrm-permalink="https://www.instagram.com/p/C_1cwTeOKO2/?utm_source=ig_embed&amp;utm_campaign=loading" 
-            data-instgrm-version="14"
-          >
-            <div style="padding:16px;">
-              <a
-                href="https://www.instagram.com/p/C_1cwTeOKO2/?utm_source=ig_embed&amp;utm_campaign=loading"
-                target="_blank"
-              >
-                Ver esta publicación en Instagram
-              </a>
-            </div>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  </div>
 </template>
       
   <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
-import rannerlogo from '@/assets/ranner_logo.svg';
   
 const showContent = ref(false);
 const parallaxOffset = ref(0);

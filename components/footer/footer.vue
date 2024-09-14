@@ -9,7 +9,7 @@
             class="mb-4 inline-flex items-center"
           >
             <img
-              src="/assets/ranner_logo.svg"
+              src="/public/ranner_logo.svg"
               alt="Ranner Logo"
               class="mr-3 size-10"
             >

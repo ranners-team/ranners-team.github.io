@@ -108,7 +108,7 @@
                   width="24"
                   height="24"
                 />
-                <span>+1 234 567 890</span>
+                <span>(2) 2303 7000</span>
               </div>
               <div
                 class="animate-fade-in flex items-center"
@@ -125,7 +125,7 @@
             </div>
             <div class="mt-6">
               <h3 class="mb-2 text-xl font-semibold text-white">
-                Visítanos en la feria
+                Visítanos en la feria de software
               </h3>
               <div
                 class="aspect-w-16 aspect-h-9 animate-fade-in"
@@ -147,6 +147,7 @@
       </div>
     </div>
   </div>
+  <FooterFooter />
 </template>
   
   <script setup>
