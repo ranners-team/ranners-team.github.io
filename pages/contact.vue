@@ -288,7 +288,6 @@
   
   <script setup>
 import { ref } from 'vue';
-import { Icon } from '@iconify/vue';
   
 const form = ref({
   name: '',
