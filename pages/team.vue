@@ -232,7 +232,7 @@ const teamMembers = ref([
   { 
     name: 'David Álvarez', 
     job: 'IA', 
-    src: 'kai.jpg', 
+    src: '/kai.jpg', 
     email: 'david.alvarez@usm.cl', 
     linkedin: 'https://www.linkedin.com/in/dialvarezr/', 
   },
