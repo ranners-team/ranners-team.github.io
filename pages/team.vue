@@ -32,7 +32,7 @@
                   rel="noopener noreferrer"
                 >
                   <Icon 
-                    icon="mdi:linkedin" 
+                    name="mdi:linkedin" 
                     class="text-lg"
                   />
                 </a>
@@ -52,7 +52,7 @@
                 rel="noopener noreferrer"
               >
                 <Icon 
-                  icon="mdi:email-outline" 
+                  name="mdi:email-outline" 
                   class="mr-2 text-lg text-gray-100"
                 />
                 <span class="text-gray-100">{{ member.email }}</span>
@@ -98,7 +98,7 @@
               aria-label="Síguenos en Instagram"
             >
               <Icon
-                icon="akar-icons:instagram-fill"
+                name="akar-icons:instagram-fill"
                 class="mr-2 text-2xl"
               />
               <span>Instagram</span>
@@ -112,7 +112,7 @@
                 aria-label="Síguenos en LinkedIn"
               >
                 <Icon
-                  icon="akar-icons:linkedin-fill"
+                  name="akar-icons:linkedin-fill"
                   class="mr-2 text-2xl"
                 />
                 <span>LinkedIn</span>
@@ -129,7 +129,7 @@
           <ul class="space-y-2">
             <li class="flex items-center">
               <Icon
-                icon="fluent:mail-20-filled"
+                name="fluent:mail-20-filled"
                 class="mr-2 text-xl"
               />
               <a
@@ -139,7 +139,7 @@
             </li>
             <li class="flex items-center">
               <Icon
-                icon="fluent:call-20-filled"
+                name="fluent:call-20-filled"
                 class="mr-2 text-xl"
               />
               <a
@@ -149,7 +149,7 @@
             </li>
             <li class="flex items-center">
               <Icon
-                icon="ic:round-location-on"
+                name="ic:round-location-on"
                 class="mr-2 text-xl"
               />
               <p>Av. Vicuña Mackenna 3939</p>
@@ -165,7 +165,7 @@
           <ul class="space-y-2">
             <li class="flex items-center">
               <Icon
-                icon="akar-icons:info-fill"
+                name="akar-icons:info-fill"
                 class="mr-2 text-xl"
               />
               <a
@@ -176,7 +176,7 @@
               
             <li class="flex items-center">
               <Icon
-                icon="mdi:contact-mail-outline"
+                name="mdi:contact-mail-outline"
                 class="mr-2 text-xl"
               />
               <a
@@ -198,7 +198,6 @@
 
 <script setup>
 import { ref } from 'vue';
-import { Icon } from '@iconify/vue';
 
 const teamMembers = ref([
   { 

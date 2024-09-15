@@ -1,16 +1,16 @@
 <template>
-  <a
-    :href="href"
+  <NuxtLink
+    :to="to"
     class=""
   >
     <slot />
-  </a>
+  </NuxtLink>
 </template>
 <script>
 
 export default {
   props: {
-    href: {
+    to: {
       type: String,
       required: true,
     },
