@@ -229,7 +229,7 @@ import { Icon } from '@iconify/vue';
 }
 
 .animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1);
 }
 
 @keyframes pulse {
@@ -238,7 +238,7 @@ import { Icon } from '@iconify/vue';
 }
 
 .animate-spin-slow {
-  animation: spin 3s linear infinite;
+  animation: spin 1.5s linear;
 }
 
 @keyframes spin {

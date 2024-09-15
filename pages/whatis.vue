@@ -16,7 +16,7 @@
         <div class="w-full md:w-1/2">
           <div class="aspect-w-16 aspect-h-9">
             <iframe
-              src="https://www.youtube.com/embed/dg91_yr44jU"
+              src="https://www.youtube.com/embed/sFdfRgvZk1o"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
