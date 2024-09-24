@@ -1,53 +1,45 @@
 <template>
-  <div class="relative flex min-h-screen flex-col items-center justify-between overflow-hidden bg-[#5747a6] p-8 text-white md:flex-row">
+  <div class="relative min-h-screen flex flex-col items-center justify-between  bg-[#5747a6] 
+      p-8 text-white md:flex-row">
     <div class="z-10 mb-10 ml-10 max-w-xl md:mb-0">
       <h1 class="mb-4 text-4xl font-bold md:text-5xl">
         <span class="typing-effect">Comienza con la innovación.</span>
       </h1>
-      <p
-        class="mb-8 translate-y-4 text-xl opacity-0 transition-all duration-1000 ease-out"
-        :class="{ 'translate-y-0 opacity-100': showContent }"
-      >
-        Conéctate con nosotros y juntos exploraremos nuevas formas de aprendizaje que marcan la diferencia en el futuro de la educación.
+      <p class="mb-8 translate-y-4 text-xl opacity-0 transition-all duration-1000 ease-out"
+        :class="{ 'translate-y-0 opacity-100': showContent }">
+        Conéctate con nosotros y juntos exploraremos nuevas formas de aprendizaje que marcan la diferencia en el
+        futuro de la educación.
       </p>
-      <a
-        href="/whatis"
-      >
-        <button 
-          class="pulse-effect rounded-full bg-green-600 px-8 py-3 font-bold text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-green-500 hover:shadow-lg"
-          @mouseover="startButtonPulse"
-          @mouseleave="stopButtonPulse"
-        >
+      <a href="/whatis">
+        <button
+          class=" rounded-full bg-green-600 px-8 py-3 font-bold text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-green-500 hover:shadow-lg"
+          @mouseover="startButtonPulse" @mouseleave="stopButtonPulse">
           ¡Conócenos!
         </button>
       </a>
     </div>
-          
+
     <div class="pointer-events-none absolute inset-0 overflow-hidden">
-      <div
-        v-for="(icon, index) in icons"
-        :key="index"
-        class="animate-float absolute text-4xl transition-all duration-300 ease-in-out"
-        :style="{ 
-          top: `${icon.top}%`, 
-          left: `${icon.left}%`, 
+      <div v-for="(icon, index) in icons" :key="index"
+        class="animate-float absolute text-4xl transition-all duration-300 ease-in-out" :style="{
+          top: `${icon.top}%`,
+          left: `${icon.left}%`,
           animationDelay: `${icon.delay}s`,
           transform: `translateY(${parallaxOffset * icon.parallaxFactor}px)`
-        }"
-      >
+        }">
         {{ icon.emoji }}
       </div>
     </div>
   </div>
 </template>
-      
-  <script setup>
+
+<script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
-  
+
 const showContent = ref(false);
 const parallaxOffset = ref(0);
 let buttonPulseInterval = null;
-  
+
 const icons = [
   { emoji: '📱', top: 10, left: 10, delay: 0, parallaxFactor: 0.2 },
   { emoji: '💬', top: 20, left: 80, delay: 1.5, parallaxFactor: 0.3 },
@@ -58,30 +50,30 @@ const icons = [
   { emoji: '📚', top: 50, left: 55, delay: 1, parallaxFactor: 0.25 },
   { emoji: '📝', top: 40, left: 70, delay: 2.5, parallaxFactor: 0.35 },
 ];
-  
+
 onMounted(() => {
   setTimeout(() => {
     showContent.value = true;
   }, 500);
-    
+
   window.addEventListener('mousemove', handleMouseMove);
-    
+
   // Load Instagram embed script
   const script = document.createElement('script');
   script.async = true;
   script.src = '//www.instagram.com/embed.js';
   document.body.appendChild(script);
 });
-  
+
 onUnmounted(() => {
   window.removeEventListener('mousemove', handleMouseMove);
 });
-  
+
 const handleMouseMove = (e) => {
   const mouseY = e.clientY;
   parallaxOffset.value = (mouseY - window.innerHeight / 2) * 0.1;
 };
-  
+
 const startButtonPulse = () => {
   if (!buttonPulseInterval) {
     buttonPulseInterval = setInterval(() => {
@@ -93,16 +85,16 @@ const startButtonPulse = () => {
     }, 2000);
   }
 };
-  
+
 const stopButtonPulse = () => {
   if (buttonPulseInterval) {
     clearInterval(buttonPulseInterval);
     buttonPulseInterval = null;
   }
 };
-  </script>
-  
-  <style scoped>
+</script>
+
+<style scoped>
   @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
@@ -176,4 +168,3 @@ const stopButtonPulse = () => {
     }
   }
   </style>
-  

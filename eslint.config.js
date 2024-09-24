@@ -14,14 +14,13 @@ export default [
   ...pluginTailwind.configs["flat/recommended"],
   pluginCompat.configs["flat/recommended"],
   {
-    languageOptions:
-    {
+    languageOptions: {
       ecmaVersion: 2020,
       sourceType: "module",
       globals: {
           ...globals.browser,
           ...globals.node,
-        },
+        }
     },
     files: [
       "**/*.mjs",

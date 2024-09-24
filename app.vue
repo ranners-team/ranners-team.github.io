@@ -4,8 +4,8 @@
     <nav class="bg-[#5747a6] p-4 shadow-lg">
       <div class="container mx-auto">
         <div class="flex items-center justify-between">
-          <a
-            href="/"
+          <NuxtLink
+            to="/"
             class="group flex items-center space-x-3"
           >
             <img
@@ -14,19 +14,19 @@
               class="size-10 transition-transform duration-300 group-hover:rotate-12"
             >
             <span class="text-2xl font-bold text-white">Ranner</span>
-          </a>
+          </NuxtLink>
           <div class="flex justify-between gap-8 text-white">
-            <NavbarLink href="/whatis">
+            <NavbarLink to="/whatis">
               ¿Qué es Ranner?
             </NavbarLink>
-            
-            <NavbarLink href="/aboutus">
+
+            <NavbarLink to="/aboutus">
               Conócenos
             </NavbarLink>
-            <NavbarLink href="/team">
+            <NavbarLink to="/team">
               Equipo
             </NavbarLink>
-            <NavbarLink href="/contact">
+            <NavbarLink to="/contact">
               Contacto
             </NavbarLink>
             <NavbarLink href="/redes">
@@ -50,7 +50,7 @@
           <NavLink
             v-for="link in navLinks"
             :key="link.href"
-            :href="link.href"
+            :to="link.href"
             class="block cursor-pointer text-white transition-colors duration-200 hover:text-gray-300"
             @click="toggleMobileMenu"
           >
@@ -59,22 +59,25 @@
         </div>
       </transition>
     </nav>
-    <main class="grow overflow-x-hidden">
+    <main class="grow ">
       <NuxtPage />
     </main>
+
+    <Footer v-if="$router.currentRoute.value.path !== '/'" />
   </div>
 </template>
-  
-  <script setup>
-  
+
+<script setup>
+
 const navLinks = [
   { text: 'Inicio', href: '/' },
   { text: 'Contact', href: '/contact' },
-  { text: 'About Us', href: '/aboutus' },
+  { text: 'Conócenos', href: '/aboutus' },
   { text: 'Team', href: '/team' },
+  { text: 'Nuestras Redes', href: '/redes' },
 ];
-  </script>
-  <!--
+</script>
+<!--
   <script>
 export default {
   name: 'Footer',
