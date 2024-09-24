@@ -29,6 +29,9 @@
             <NavbarLink href="/contact">
               Contacto
             </NavbarLink>
+            <NavbarLink href="/redes">
+              Nuestras redes
+            </NavbarLink>
           </div>
         </div>
       </div>

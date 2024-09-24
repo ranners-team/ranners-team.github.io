@@ -127,7 +127,7 @@
                 class="mr-2 text-xl"
               />
               <a
-                href="mailto:ranners.team.ai@gmail.com"
+                href="mailto:✉ ranners.team.ai@gmail.com"
                 class="transition-colors duration-200 hover:text-gray-300"
               >ranners.team.ai@gmail.com</a>
             </li>
