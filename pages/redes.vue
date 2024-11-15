@@ -8,7 +8,7 @@
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         <!-- Instagram Section -->
         <div class="overflow-hidden rounded-lg bg-white shadow-lg">
-          <div class="ml-14 p-6">
+          <div class="p-6 sm:ml-14">
             <h2 class="mb-4 flex items-center text-2xl font-bold text-gray-800">
               <Icon
                 icon="akar-icons:instagram-fill"

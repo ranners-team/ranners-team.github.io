@@ -1,21 +1,40 @@
 <template>
-  <div class="bg-[#5747a6] min-h-screen px-4 py-16 sm:px-6 lg:px-8">
+  <div class="min-h-screen bg-[#5747a6] px-4 py-16 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-7xl">
-      <h1 class="animate-fade-in-down mb-16 bg-white bg-clip-text text-center text-5xl font-extrabold text-transparent">
+      <h1 class="animate-fade-in-down mb-16 bg-white bg-clip-text text-center text-4xl font-extrabold text-transparent sm:text-5xl">
         Conoce a nuestro equipo
       </h1>
 
-      <transition-group name="team-list" tag="ul" class="grid grid-cols-1 gap-6 px-12 sm:grid-cols-2 lg:grid-cols-3">
-        <li v-for="(member, index) in teamMembers" :key="member.name" class="animate-fade-in flex justify-center"
-          :style="{ animationDelay: `${index * 150}ms` }">
+      <transition-group
+        name="team-list"
+        tag="ul"
+        class="grid grid-cols-1 gap-6 px-12 sm:grid-cols-2 lg:grid-cols-3"
+      >
+        <li
+          v-for="(member, index) in teamMembers"
+          :key="member.name"
+          class="animate-fade-in flex justify-center"
+          :style="{ animationDelay: `${index * 150}ms` }"
+        >
           <div class="h-auto w-80 overflow-hidden rounded-lg bg-white bg-opacity-10 shadow-lg hover:shadow-2xl">
-            <img :src="member.src" :alt="member.name" class="h-48 w-full object-cover object-center">
+            <img
+              :src="member.src"
+              :alt="member.name"
+              class="h-48 w-full object-cover object-center"
+            >
             <div class="p-4">
               <h2 class="mb-2 flex items-center text-lg font-semibold text-white">
                 {{ member.name }}
-                <a :href="member.linkedin" class="ml-2 text-gray-100 hover:text-gray-200" target="_blank"
-                  rel="noopener noreferrer">
-                  <Icon name="mdi:linkedin" class="text-lg" />
+                <a
+                  :href="member.linkedin"
+                  class="ml-2 text-gray-100 hover:text-gray-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon
+                    name="mdi:linkedin"
+                    class="text-lg"
+                  />
                 </a>
               </h2>
               <p class="mb-2 text-sm text-gray-100">
@@ -26,10 +45,16 @@
               </p>
 
               <!-- Enlace de Correo con Icono -->
-              <a :href="`mailto:${member.email}`"
-                class="flex items-center space-x-2 text-xs text-gray-400 hover:text-gray-200" target="_blank"
-                rel="noopener noreferrer">
-                <Icon name="mdi:email-outline" class="mr-2 text-lg text-gray-100" />
+              <a
+                :href="`mailto:${member.email}`"
+                class="flex items-center space-x-2 text-xs text-gray-400 hover:text-gray-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon
+                  name="mdi:email-outline"
+                  class="mr-2 text-lg text-gray-100"
+                />
                 <span class="text-gray-100">{{ member.email }}</span>
               </a>
             </div>

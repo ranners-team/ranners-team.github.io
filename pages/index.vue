@@ -1,32 +1,42 @@
 <template>
-  <div class="relative min-h-screen flex flex-col items-center justify-between  bg-[#5747a6] 
-      p-8 text-white md:flex-row">
+  <div
+    class="relative flex min-h-screen flex-col items-center justify-between  bg-[#5747a6] 
+      p-8 text-white md:flex-row"
+  >
     <div class="z-10 mb-10 ml-10 max-w-xl md:mb-0">
-      <h1 class="mb-4 text-4xl font-bold md:text-5xl">
+      <h1 class="mb-4 text-xl font-bold sm:text-3xl md:text-5xl">
         <span class="typing-effect">Comienza con la innovación.</span>
       </h1>
-      <p class="mb-8 translate-y-4 text-xl opacity-0 transition-all duration-1000 ease-out"
-        :class="{ 'translate-y-0 opacity-100': showContent }">
+      <p
+        class="mb-8 translate-y-4 opacity-0 transition-all duration-1000 ease-out sm:text-xl md:text-2xl"
+        :class="{ 'translate-y-0 opacity-100': showContent }"
+      >
         Conéctate con nosotros y juntos exploraremos nuevas formas de aprendizaje que marcan la diferencia en el
         futuro de la educación.
       </p>
       <a href="/whatis">
         <button
           class=" rounded-full bg-green-600 px-8 py-3 font-bold text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-green-500 hover:shadow-lg"
-          @mouseover="startButtonPulse" @mouseleave="stopButtonPulse">
+          @mouseover="startButtonPulse"
+          @mouseleave="stopButtonPulse"
+        >
           ¡Conócenos!
         </button>
       </a>
     </div>
 
     <div class="pointer-events-none absolute inset-0 overflow-hidden">
-      <div v-for="(icon, index) in icons" :key="index"
-        class="animate-float absolute text-4xl transition-all duration-300 ease-in-out" :style="{
+      <div
+        v-for="(icon, index) in icons"
+        :key="index"
+        class="animate-float absolute text-4xl transition-all duration-300 ease-in-out"
+        :style="{
           top: `${icon.top}%`,
           left: `${icon.left}%`,
           animationDelay: `${icon.delay}s`,
           transform: `translateY(${parallaxOffset * icon.parallaxFactor}px)`
-        }">
+        }"
+      >
         {{ icon.emoji }}
       </div>
     </div>
@@ -110,11 +120,8 @@ const stopButtonPulse = () => {
   }
   
   .typing-effect {
-    display: inline-block;
-    overflow: hidden;
     border-right: .15em solid orange;
     white-space: nowrap;
-    margin: 0 auto;
     letter-spacing: .15em;
     animation: 
       typing 1.5s steps(40, end),

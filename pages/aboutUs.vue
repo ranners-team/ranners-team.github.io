@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-full min-h-screen flex-col items-center justify-center bg-[#5747a6] px-4 py-12 sm:px-6 lg:px-8">
+  <div class="h-full flex-col items-center justify-center bg-[#5747a6] px-4 py-12 sm:px-6 lg:px-8">
     <div class="w-full max-w-4xl space-y-8">
       <transition
         appear
@@ -7,7 +7,7 @@
       >
         <div class="text-center">
           <h1
-            class="animate-slide-down mb-6 bg-gradient-to-r from-white to-white bg-clip-text text-5xl font-extrabold text-transparent"
+            class="animate-slide-down mb-6 bg-gradient-to-r from-white to-white bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl"
           >
             Quiénes Somos
           </h1>
@@ -21,7 +21,7 @@
         appear
         name="fade-in"
       >
-        <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
+        <div class="mt-16 flex flex-col gap-8 sm:grid-cols-2">
           <div class="rounded-lg bg-white bg-opacity-10 p-6 backdrop-blur-lg transition duration-500">
             <div class="mb-4 flex items-center">
               <div class="mr-4 animate-pulse text-white">

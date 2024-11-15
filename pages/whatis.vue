@@ -21,7 +21,7 @@
                 mejorando el rendimiento académico de manera exponencial.
               </p>
               <a
-                href="https://staging.ranner.cl"
+                href="https://ranner.cl"
                 target="_blank"
                 rel="noopener noreferrer"
               >

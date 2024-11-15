@@ -15,7 +15,7 @@
             >
             <span class="text-2xl font-bold text-white">Ranner</span>
           </NuxtLink>
-          <div class="flex justify-between gap-8 text-white">
+          <div class="hidden justify-between gap-8 text-white md:flex">
             <NavbarLink to="/whatis">
               ¿Qué es Ranner?
             </NavbarLink>
@@ -33,6 +33,25 @@
               Nuestras redes
             </NavbarLink>
           </div>
+          <button
+            class="text-white focus:outline-none md:hidden"
+            @click="toggleMobileMenu"
+          >
+            <svg
+              class="size-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
         </div>
       </div>
       <transition
@@ -47,7 +66,7 @@
           v-if="isMobileMenuOpen"
           class="mt-4 space-y-2 md:hidden"
         >
-          <NavLink
+          <NavbarLink
             v-for="link in navLinks"
             :key="link.href"
             :to="link.href"
@@ -55,7 +74,7 @@
             @click="toggleMobileMenu"
           >
             {{ link.text }}
-          </NavLink>
+          </NavbarLink>
         </div>
       </transition>
     </nav>
@@ -70,12 +89,19 @@
 <script setup>
 
 const navLinks = [
-  { text: 'Inicio', href: '/' },
-  { text: 'Contact', href: '/contact' },
   { text: 'Conócenos', href: '/aboutus' },
   { text: 'Team', href: '/team' },
   { text: 'Nuestras Redes', href: '/redes' },
+  { text: 'Contacto', href: '/contact' },
 ];
+
+const isMobileMenuOpen = ref(false);
+
+const toggleMobileMenu = () => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value;
+};
+
+
 </script>
 <!--
   <script>
